@@ -1,0 +1,2 @@
+---
+serviio_bundle_url: 'http://kairoh.bitbucket.org/serviio-webui/dist/serviio-webui-unix-{{ serviio_webui_version }}.tar.gz'

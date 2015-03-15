@@ -1,0 +1,14 @@
+---
+- name: download the bundle to the temporary location
+  get_url:
+    url: '{{ serviio_webui_bundle_url }}'
+    dest: '/tmp/{{ serviio_webui_bundle_url | basename }}'
+  tags: serviio
+
+- name: unpack the bundle
+  unarchive:
+    src: '/tmp/{{ serviio_webui_bundle_url | basename }}'
+    dest: '{{ serviio_home }}'
+    copy: no
+    creates: '{{ serviio_home }}/bin/serviio-webui.sh'
+  tags: serviio
